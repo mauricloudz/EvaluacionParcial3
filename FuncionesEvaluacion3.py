@@ -18,17 +18,18 @@ def grabar_vehiculo(registro):
             precio = input("Precio: ")
         fecha_registro = input("Fecha de registro (DD/MM/AAAA): ")
         multas = []
-        tiene_multas = input("Posee multas? (S/N): ")
-        if tiene_multas.upper() == "S":
-            cantidad_multas = int(input("Ingrese la cantidad de multas: "))
-            for i in range(cantidad_multas):
-                fecha_multa = input(f"Fecha de la multa {i+1}: ")
-                monto_multa = input("Monto de la multa: ")
-                multas.append({"Fecha": fecha_multa, "Monto": monto_multa})                
-        elif tiene_multas.upper() == "N":
-            break
-        else:
-            print("Respuesta invalida. Por favor ingrese 'S' para si o 'N' para no (En mayusculas).")
+        while True:
+            tiene_multas = input("Posee multas? (S/N): ")
+            if tiene_multas.upper() == "S":
+                cantidad_multas = int(input("Ingrese la cantidad de multas: "))
+                for i in range(cantidad_multas):
+                    fecha_multa = input(f"Fecha de la multa {i+1}: ")
+                    monto_multa = input("Monto de la multa: ")
+                    multas.append({"Fecha": fecha_multa, "Monto": monto_multa})                
+            elif tiene_multas.upper() == "N":
+                break
+            else:
+                print("Respuesta invalida. Por favor ingrese 'S' para si o 'N' para no (En mayusculas).")
         nombre_dueno = input("Nombre del dueño: ")
 
         registro[patente] = {
