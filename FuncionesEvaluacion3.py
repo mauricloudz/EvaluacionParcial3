@@ -25,7 +25,8 @@ def grabar_vehiculo(registro):
                 for i in range(cantidad_multas):
                     fecha_multa = input(f"Fecha de la multa {i+1}: ")
                     monto_multa = input("Monto de la multa: ")
-                    multas.append({"Fecha": fecha_multa, "Monto": monto_multa})                
+                    multas.append({"Fecha": fecha_multa, "Monto": monto_multa})
+                break       
             elif tiene_multas.upper() == "N":
                 break
             else:
